@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Home() {
   return (
     <main style={{
@@ -29,7 +30,7 @@ export default function Home() {
         </p>
 
 
-        <a href="/menu">
+        <Link href="/menu">
           <button style={{
             background:"#c9a227",
             border:"none",
@@ -40,7 +41,7 @@ export default function Home() {
           }}>
             🍽️ Menu كۆرۈش
           </button>
-        </a>
+        </Link>
 
       </section>
 
