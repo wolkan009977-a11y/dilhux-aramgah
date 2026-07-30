@@ -1,19 +1,28 @@
 export default function Menu() {
-  const items = [
+  const categories = [
     {
-      name: "🔥 قوي گۆشى كاۋاپ",
-      desc: "ساپ قوي گۆشىدىن تەييارلانغان",
-      price: "250₺",
+      title: "🔥 كاۋاپلار",
+      items: [
+        ["قوي گۆشى كاۋاپ", "250₺"],
+        ["توخۇ كاۋاپ", "200₺"],
+        ["جىگەر كاۋاپ", "180₺"],
+      ],
     },
     {
-      name: "☕ قارا قەھۋە",
-      desc: "ئالاھىدە پىشۇرۇلغان قەھۋە",
-      price: "90₺",
+      title: "☕ قەھۋەلەر",
+      items: [
+        ["قارا قەھۋە", "90₺"],
+        ["سۈتلۈك قەھۋە", "110₺"],
+        ["ئالاھىدە قەھۋە", "130₺"],
+      ],
     },
     {
-      name: "🥤 سوغۇق ئىچىملىك",
-      desc: "تازە ۋە سۈپەتلىك ئىچىملىك",
-      price: "70₺",
+      title: "🥤 ئىچىملىكلەر",
+      items: [
+        ["سوغۇق ئىچىملىك", "70₺"],
+        ["چاي", "50₺"],
+        ["شەربەت", "80₺"],
+      ],
     },
   ];
 
@@ -31,27 +40,34 @@ export default function Menu() {
         🍽️ DILHUX Aramgah Menu
       </h1>
 
-      <p>تەملىك يېمەكلىك ۋە ئالاھىدە قەھۋە</p>
+      {categories.map((cat, index) => (
+        <section key={index} style={{ marginTop: "35px" }}>
 
-      {items.map((item, index) => (
-        <div
-          key={index}
-          style={{
-            background: "#171717",
-            padding: "20px",
-            margin: "20px auto",
-            maxWidth: "350px",
-            borderRadius: "15px",
-          }}
-        >
-          <h2>{item.name}</h2>
-          <p>{item.desc}</p>
-          <h3 style={{ color: "#c9a227" }}>
-            {item.price}
-          </h3>
-        </div>
+          <h2 style={{ color: "#c9a227" }}>
+            {cat.title}
+          </h2>
+
+          {cat.items.map((item, i) => (
+            <div
+              key={i}
+              style={{
+                background: "#171717",
+                padding: "15px",
+                margin: "12px auto",
+                maxWidth: "350px",
+                borderRadius: "15px",
+              }}
+            >
+              <h3>{item[0]}</h3>
+              <p style={{ color: "#c9a227" }}>
+                {item[1]}
+              </p>
+            </div>
+          ))}
+
+        </section>
       ))}
 
     </main>
   );
-}
+        }
