@@ -43,7 +43,7 @@ export default function Home() {
             cursor: "pointer",
           }}
         >
-          🍽️ Menu كۆرۈش
+          🍽️ تىزىملىك
         </button>
       </Link>
 
