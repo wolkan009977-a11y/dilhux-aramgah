@@ -6,44 +6,60 @@ export default function Menu() {
   const [active, setActive] = useState("كاۋاپلار");
 
   const menus = {
-    "كاۋاپلار": [
-      ["🔥 قوي گۆشى كاۋاپ", "65₺"],
-      ["🐟 بېلىق كاۋاپ", "40₺"],
-      ["🍗 توخۇ قانات كاۋاپ", "25₺"],
-      ["🥩 جىگەر كاۋاپ", "50₺"],
-      ["🥩 بۆرەك كاۋاپ", "50₺"],
-      ["🔥 مەنجاڭ كاۋاپ", "10₺"],
+    "🔥 كاۋاپلار": [
+      ["قوي گۆشى كاۋاپ", "65₺"],
+      ["بېلىق كاۋاپ", "40₺"],
+      ["توخۇ قانات كاۋاپ", "25₺"],
+      ["جىگەر كاۋاپ", "50₺"],
+      ["بۆرەك كاۋاپ", "50₺"],
+      ["مەنجاڭ كاۋاپ", "10₺"],
     ],
 
-    "ئىچىملىكلەر": [
-      ["🥛 دوغاپ", "30₺"],
-      ["🍹 موھىتو", "60₺"],
-      ["🍑 شاپتۇل چاي", "50₺"],
+    "🥤 ئىچىملىكلەر": [
+      ["دوغاپ", "30₺"],
+      ["موھىتو", "60₺"],
+      ["شاپتۇل چاي", "50₺"],
     ],
 
-    "ئاچچىقلار": [
-      ["🍞 نان", "5₺"],
-      ["🔥 مەنجاڭ", "10₺"],
-      ["🌶️ ئۇزۇنچاق قىيزا", "25₺"],
-      ["🌶️ ياپلاق قىيزا", "25₺"],
-      ["🥚 تۇخۇم", "15₺"],
-      ["🍗 توخۇ ۋەنزىسى", "20₺"],
+    "🌶️ ئاچچىقلار": [
+      ["نان", "5₺"],
+      ["مەنجاڭ", "10₺"],
+      ["ئۇزۇنچاق قىيزا", "25₺"],
+      ["ياپلاق قىيزا", "25₺"],
+      ["تۇخۇم", "15₺"],
+      ["توخۇ ۋەنزىسى", "20₺"],
     ],
   };
 
   return (
     <main
       style={{
-        background: "#0b0b0b",
-        color: "white",
+        background:
+          "linear-gradient(#0b2a3d, #07151f)",
+        color: "#fff",
         minHeight: "100vh",
         padding: "30px",
         textAlign: "center",
       }}
     >
-      <h1 style={{ color: "#c9a227" }}>
-        🍽️ دىلخۇش ئارامگاھى يىمەك-ئىچمەك تىزىملىكى
+
+      <h1
+        style={{
+          color: "#d4af37",
+          fontSize: "30px",
+        }}
+      >
+        ☕ دىلخۇش ئارامگاھى
       </h1>
+
+      <h2
+        style={{
+          color: "#fff",
+        }}
+      >
+        يىمەك-ئىچمەك تىزىملىكى
+      </h2>
+
 
       <div>
         {Object.keys(menus).map((name) => (
@@ -52,13 +68,17 @@ export default function Menu() {
             onClick={() => setActive(name)}
             style={{
               margin: "8px",
-              padding: "12px 20px",
+              padding: "12px 18px",
               borderRadius: "25px",
-              border: "none",
+              border: "1px solid #d4af37",
               background:
-                active === name ? "#c9a227" : "#333",
-              color: "white",
-              cursor: "pointer",
+                active === name
+                  ? "#d4af37"
+                  : "#12384d",
+              color:
+                active === name
+                  ? "#07151f"
+                  : "#fff",
               fontSize: "16px",
             }}
           >
@@ -67,32 +87,38 @@ export default function Menu() {
         ))}
       </div>
 
-      <h2 style={{ color: "#c9a227", marginTop: "30px" }}>
-        {active}
-      </h2>
 
-      {menus[active].map((item, index) => (
-        <div
-          key={index}
-          style={{
-            background: "#171717",
-            padding: "18px",
-            margin: "15px auto",
-            maxWidth: "350px",
-            borderRadius: "15px",
-          }}
-        >
-          <h3>{item[0]}</h3>
-          <p
+      <div style={{marginTop:"30px"}}>
+        {menus[active].map((item,index)=>(
+          <div
+            key={index}
             style={{
-              color: "#c9a227",
-              fontSize: "20px",
+              background:"#8b5a2b",
+              margin:"15px auto",
+              padding:"20px",
+              maxWidth:"350px",
+              borderRadius:"20px",
+              border:"2px solid #d4af37",
             }}
           >
-            {item[1]}
-          </p>
-        </div>
-      ))}
+
+            <h3>
+              {item[0]}
+            </h3>
+
+            <p
+              style={{
+                color:"#ffe08a",
+                fontSize:"22px",
+              }}
+            >
+              {item[1]}
+            </p>
+
+          </div>
+        ))}
+      </div>
+
     </main>
   );
               }
