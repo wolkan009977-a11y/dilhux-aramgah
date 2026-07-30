@@ -42,7 +42,7 @@ export default function Menu() {
       }}
     >
       <h1 style={{ color: "#c9a227" }}>
-        🍽️ DILHUX Aramgah Menu
+        🍽️ دىلخۇش ئارامگاھى يىمەك-ئىچمەك تىزىملىكى
       </h1>
 
       <div>
