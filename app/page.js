@@ -29,7 +29,7 @@ export default function Home() {
         </p>
 
 
-        <a href="#menu">
+        <a href="/menu">
           <button style={{
             background:"#c9a227",
             border:"none",
