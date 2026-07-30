@@ -23,7 +23,7 @@ export default function Home() {
       />
 
       <h1 style={{ color: "#c9a227" }}>
-        ☕ DILHUX Aramgah
+        🍽️ دىلخۇش ئارامگاھى يىمەك-ئىچمەك تىزىملىكى
       </h1>
 
       <p>
