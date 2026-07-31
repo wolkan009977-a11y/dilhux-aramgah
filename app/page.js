@@ -4,80 +4,98 @@ export default function Home() {
       style={{
         minHeight: "100vh",
         background:
-          "linear-gradient(135deg,#06283D,#0B3A53,#07151F)",
+          "linear-gradient(145deg,#06283D,#0B3A53,#07151F)",
         color: "white",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        padding: "20px",
         textAlign: "center",
-        padding: "30px 15px",
       }}
     >
 
       <div
         style={{
-          maxWidth: "500px",
           width: "100%",
-          padding: "35px 25px",
-          borderRadius: "35px",
+          maxWidth: "430px",
+          padding: "28px 20px",
+          borderRadius: "28px",
           background:
-            "rgba(0,0,0,0.35)",
+            "rgba(0,0,0,0.45)",
           border:
-            "3px solid #D4AF37",
+            "2px solid #D4AF37",
           boxShadow:
-            "0 0 30px rgba(212,175,55,0.35)",
+            "0 0 25px rgba(212,175,55,0.35)",
         }}
       >
 
-        <h1
+        <div
           style={{
             color:"#D4AF37",
-            fontSize:"36px",
-            marginBottom:"15px",
+            fontSize:"22px",
           }}
         >
-          ☕ دىلخۇش ئارامگاھى
+          ✦ ☕ ✦
+        </div>
+
+
+        <h1
+          style={{
+            margin:"10px 0",
+            color:"#D4AF37",
+            fontSize:"34px",
+            textShadow:
+              "0 3px 8px #000",
+          }}
+        >
+          دىلخۇش ئارامگاھى
         </h1>
 
 
-        <h2
+        <p
           style={{
-            fontSize:"22px",
+            fontSize:"20px",
             lineHeight:"1.8",
+            margin:"15px 0",
           }}
         >
-          ئەزىز مېھمان،<br/>
+          ئەزىز مېھمان،
+          <br/>
           دىلخۇش ئارامگاھىغا خۇش كەپسىز
-        </h2>
+        </p>
 
 
         <a
           href="/menu"
           style={{
             display:"inline-block",
-            marginTop:"35px",
-            padding:"18px 45px",
-            borderRadius:"40px",
+            margin:"22px 0",
+            padding:"16px 42px",
+            borderRadius:"50px",
             background:"#D4AF37",
             color:"#07151F",
-            fontSize:"22px",
-            fontWeight:"bold",
             textDecoration:"none",
-            border:"3px solid #FFE8A3",
+            fontSize:"21px",
+            fontWeight:"bold",
+            border:
+              "2px solid #FFE8A3",
             boxShadow:
-              "0 8px 20px rgba(0,0,0,0.4)",
+              "0 8px 18px rgba(0,0,0,0.4)",
           }}
         >
           🍽️ تىزىملىك كۆرۈش
         </a>
 
 
-        <p
+        <div
           style={{
-            marginTop:"40px",
+            marginTop:"20px",
+            paddingTop:"18px",
+            borderTop:
+              "1px solid rgba(212,175,55,0.5)",
             color:"#FFE8A3",
-            fontSize:"18px",
-            lineHeight:"2",
+            fontSize:"16px",
+            lineHeight:"1.9",
           }}
         >
           دوستلار جەم بولۇپ كۈلكە ياڭرىغان،
@@ -87,11 +105,10 @@ export default function Home() {
           «يەنە كېلەيلى» دەيدۇ ھەممە مېھمان،
           <br/>
           دىلخۇش ئارامگاھى — نامىغا لايىق ماكان
-        </p>
-
+        </div>
 
       </div>
 
     </main>
   );
-}
+              }
