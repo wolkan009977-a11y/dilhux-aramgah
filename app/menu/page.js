@@ -2,15 +2,48 @@
 
 import { useState, useEffect } from "react";
 import { db } from "../../lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { 
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  updateDoc,
+  increment
+} from "firebase/firestore";
 
 export default function Menu() {
 
   const [category, setCategory] = useState(null);
+  
+  const [visitorCount, setVisitorCount] = useState(
+    
 const [firebaseDrinks, setFirebaseDrinks] = useState([]);
 const [firebaseKawaps, setFirebaseKawaps] = useState([]);
 const [firebaseBottleDrinks, setFirebaseBottleDrinks] = useState([]);
 
+useEffect(() => {
+
+  const addVisitor = async () => {
+
+    const visitorRef = doc(db,"visitors","total");
+
+    await updateDoc(visitorRef,{
+      count: increment(1)
+    });
+
+    const snap = await getDoc(visitorRef);
+
+    if(snap.exists()){
+      setVisitorCount(
+        snap.data().count
+      );
+    }
+
+  };
+
+  addVisitor();
+
+}, []);  
   useEffect(() => {
   const getMenu = async () => {
     const querySnapshot = await getDocs(collection(db, "menu"));
@@ -262,6 +295,15 @@ const drinks = [
         دىلخۇش ئارامگاھى
       </h1>
 
+<p
+style={{
+color:"#D4AF37",
+fontSize:"18px",
+marginTop:"10px"
+}}
+>
+👥 زىيارەت قىلغۇچىلار: {visitorCount}
+</p>
 
       {!category && (
 
