@@ -40,7 +40,29 @@ export default function Menu() {
     },
   ];
 
-
+const drinks = [
+  {
+    name: "موھىتو",
+    price: "60 ₺",
+    image: "/images/mohito.jpg",
+  },
+  {
+    name: "دوغاپ",
+    price: "30 ₺",
+    image: "/images/doghap.jpg",
+  },
+  {
+    name: "شاپتۇل چاي",
+    price: "50 ₺",
+    image: "/images/shaptul-chay.jpg",
+  },
+  {
+    name: "كوكتېل",
+    price: "60 ₺",
+    image: "/images/kokteyl.jpg",
+  },
+];
+  
   return (
 
     <main
@@ -94,9 +116,12 @@ export default function Menu() {
           </button>
 
 
-          <button style={buttonStyle}>
-            🥤 ئىچىملىكلەر
-          </button>
+          <button
+  style={buttonStyle}
+  onClick={()=>setCategory("drink")}
+>
+  🥤 ئىچىملىكلەر
+</button>
 
 
           <button style={buttonStyle}>
@@ -197,7 +222,80 @@ export default function Menu() {
 
       )}
 
+{category==="drink" && (
 
+<div>
+
+<button
+style={backStyle}
+onClick={()=>setCategory(null)}
+>
+← قايتىش
+</button>
+
+
+<h2
+style={{
+color:"#D4AF37",
+fontSize:"28px",
+}}
+>
+🥤 ئىچىملىكلەر
+</h2>
+
+
+<div
+style={{
+display:"grid",
+gap:"20px",
+}}
+>
+
+{drinks.map((item,index)=>(
+
+<div
+key={index}
+style={cardStyle}
+>
+
+<img
+src={item.image}
+alt={item.name}
+style={{
+width:"100%",
+height:"230px",
+objectFit:"cover",
+borderRadius:"20px 20px 0 0",
+}}
+/>
+
+
+<h3>
+{item.name}
+</h3>
+
+
+<p
+style={{
+color:"#D4AF37",
+fontSize:"23px",
+fontWeight:"bold",
+}}
+>
+{item.price}
+</p>
+
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+)}
+  
     </main>
 
   );
