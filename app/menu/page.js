@@ -3,7 +3,9 @@
 import { useState } from "react";
 
 export default function Menu() {
+
   const [category, setCategory] = useState(null);
+
 
   const kawaps = [
     {
@@ -40,18 +42,35 @@ export default function Menu() {
 
 
   return (
+
     <main
       style={{
-        minHeight: "100vh",
-        width: "100%",
+        minHeight:"100vh",
+        width:"100%",
         background:
-          "linear-gradient(145deg,#06283D,#0B3A53,#07151F)",
-        color: "white",
-        padding: "25px 15px",
-        boxSizing: "border-box",
-        textAlign: "center",
+        "linear-gradient(145deg,#06283D,#0B3A53,#07151F)",
+        color:"white",
+        padding:"25px 15px",
+        boxSizing:"border-box",
+        textAlign:"center",
       }}
     >
+
+      <style>
+        {`
+        @keyframes fadeInUp {
+          from {
+            opacity:0;
+            transform:translateY(20px);
+          }
+          to {
+            opacity:1;
+            transform:translateY(0);
+          }
+        }
+        `}
+      </style>
+
 
       <h1
         style={{
@@ -64,9 +83,11 @@ export default function Menu() {
 
 
       {!category && (
+
         <div>
 
-          <button style={buttonStyle}
+          <button
+            style={buttonStyle}
             onClick={()=>setCategory("kawap")}
           >
             🍢 كاۋاپلار
@@ -88,11 +109,13 @@ export default function Menu() {
           </button>
 
         </div>
+
       )}
 
 
 
-      {category === "kawap" && (
+      {category==="kawap" && (
+
         <div>
 
           <button
@@ -111,6 +134,7 @@ export default function Menu() {
           >
             🍢 كاۋاپلار
           </h2>
+
 
 
           <div
@@ -132,14 +156,19 @@ export default function Menu() {
                 alt={item.name}
                 style={{
                   width:"100%",
-                  height:"220px",
+                  height:"230px",
                   objectFit:"cover",
                   borderRadius:"20px 20px 0 0",
                 }}
               />
 
 
-              <h3>
+              <h3
+                style={{
+                  fontSize:"22px",
+                  margin:"15px 0 5px",
+                }}
+              >
                 {item.name}
               </h3>
 
@@ -147,29 +176,38 @@ export default function Menu() {
               <p
                 style={{
                   color:"#D4AF37",
-                  fontSize:"22px",
+                  fontSize:"23px",
                   fontWeight:"bold",
+                  marginBottom:"15px",
                 }}
               >
                 {item.price}
               </p>
 
+
             </div>
 
           ))}
 
+
           </div>
 
+
         </div>
+
       )}
 
+
     </main>
+
   );
 }
 
 
 
-const buttonStyle={
+
+const buttonStyle = {
+
   width:"100%",
   padding:"18px",
   margin:"12px 0",
@@ -179,22 +217,29 @@ const buttonStyle={
   color:"#07151F",
   fontSize:"21px",
   fontWeight:"bold",
+
 };
 
 
 
-const backStyle={
+const backStyle = {
+
   ...buttonStyle,
   width:"auto",
-  padding:"12px 30px",
+  padding:"12px 35px",
+
 };
 
 
 
-const cardStyle={
+const cardStyle = {
+
   background:"rgba(0,0,0,0.45)",
   borderRadius:"20px",
   overflow:"hidden",
   border:"2px solid rgba(212,175,55,0.5)",
-  boxShadow:"0 5px 20px rgba(0,0,0,0.4)",
+  boxShadow:
+  "0 8px 30px rgba(212,175,55,0.25)",
+  animation:"fadeInUp 0.6s ease",
+
 };
