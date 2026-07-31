@@ -15,27 +15,27 @@ export default function Menu() {
     },
     {
       name: "بېلىق كاۋاپ",
-      price: "40 تىل",
+      price: "40 ₺",
       image: "/images/balik-kawap.jpg",
     },
     {
       name: "توخۇ قانات كاۋاپ",
-      price: "25 تىل",
+      price: "25 ₺",
       image: "/images/toyuq-qanat-kawap.jpg",
     },
     {
       name: "جىگەر كاۋاپ",
-      price: "50 تىل",
+      price: "50 ₺",
       image: "/images/jiger-kawap.jpg",
     },
     {
       name: "بۆرەك كاۋاپ",
-      price: "50 تىل",
+      price: "50 ₺",
       image: "/images/borek-kawap.jpg",
     },
     {
       name: "مەنجاڭ كاۋاپ",
-      price: "10 تىل",
+      price: "10 ₺",
       image: "/images/menjang-kawap.jpg",
     },
   ];
