@@ -9,7 +9,7 @@ export default function Menu() {
   const [category, setCategory] = useState(null);
 const [firebaseDrinks, setFirebaseDrinks] = useState([]);
 const [firebaseKawaps, setFirebaseKawaps] = useState([]);
-
+const [firebaseBottleDrinks, setFirebaseBottleDrinks] = useState([]);
 
   useEffect(() => {
   const getMenu = async () => {
@@ -27,7 +27,11 @@ const [firebaseKawaps, setFirebaseKawaps] = useState([]);
     setFirebaseDrinks(
       items.filter((item) => item.category === "drink")
     );
+    setFirebaseBottleDrinks(
+  items.filter((item) => item.category === "bottle")
+);
   };
+    
 
   getMenu();
 }, []);
