@@ -175,6 +175,24 @@ const drinks = [
     price: "5₺",
   },
 ];
+  const coldFoods = [
+  {
+    name: "راڭپىزا",
+    price: "30₺",
+  },
+  {
+    name: "سېرىق ئاش",
+    price: "30₺",
+  },
+  {
+    name: "لەمپۇڭ",
+    price: "30₺",
+  },
+  {
+    name: "نىيۇجىمەن",
+    price: "30₺",
+  },
+];
   return (
 
     <main
@@ -251,6 +269,12 @@ onClick={()=>setCategory("spicy")}
   🌶️ ئاچچىقلار
 </button>
 
+ <button
+style={buttonStyle}
+onClick={()=>setCategory("cold")}
+>
+🥗 سوغۇق يېمەكلىكلەر
+</button> 
         </div>
 
       )}
@@ -547,6 +571,72 @@ fontWeight:"bold",
 </div>
 
 )} 
+  {category==="cold" && (
+
+<div>
+
+<button
+style={backStyle}
+onClick={()=>setCategory(null)}
+>
+← قايتىش
+</button>
+
+
+<h2
+style={{
+color:"#D4AF37",
+fontSize:"28px",
+}}
+>
+🥗 سوغۇق يېمەكلىكلەر
+</h2>
+
+
+<div
+style={{
+display:"grid",
+gap:"15px",
+}}
+>
+
+{coldFoods.map((item,index)=>(
+
+<div
+key={index}
+style={cardStyle}
+>
+
+<h3
+style={{
+fontSize:"22px",
+margin:"20px",
+}}
+>
+{item.name}
+</h3>
+
+
+<p
+style={{
+color:"#D4AF37",
+fontSize:"23px",
+fontWeight:"bold",
+}}
+>
+{item.price}
+</p>
+
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+)}
 </main>
 
   );
