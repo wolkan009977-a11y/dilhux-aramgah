@@ -13,11 +13,10 @@ import {
 
 export default function Menu() {
 
-  const [category, setCategory] = useState(null);
-  
-  
-  const [visitorCount, setVisitorCount] = useState(
-    
+const [category, setCategory] = useState(null);
+
+const [visitorCount, setVisitorCount] = useState(0);
+
 const [firebaseDrinks, setFirebaseDrinks] = useState([]);
 const [firebaseKawaps, setFirebaseKawaps] = useState([]);
 const [firebaseBottleDrinks, setFirebaseBottleDrinks] = useState([]);
