@@ -15,6 +15,7 @@ export default function Menu() {
 
   const [category, setCategory] = useState(null);
   
+  
   const [visitorCount, setVisitorCount] = useState(
     
 const [firebaseDrinks, setFirebaseDrinks] = useState([]);
@@ -25,8 +26,8 @@ useEffect(() => {
 
   const addVisitor = async () => {
 
-    const visitorRef = doc(db,"visitors","total");
-
+    
+const visitorRef = doc(db, "statistics", "views");
     await updateDoc(visitorRef,{
       count: increment(1)
     });
