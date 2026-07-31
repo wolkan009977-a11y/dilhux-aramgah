@@ -34,83 +34,126 @@ export default function Menu() {
   return (
     <main
       style={{
-        background: "linear-gradient(#0b2a3d, #07151f)",
-        color: "white",
         minHeight: "100vh",
-        padding: "30px",
+        padding: "30px 15px",
         textAlign: "center",
+        color: "#fff",
+        background:
+          "linear-gradient(135deg,#06283D,#0B3A53,#07151F)",
       }}
     >
 
-      <h1
+      <div
         style={{
-          color: "#d4af37",
-          fontSize: "30px",
+          border: "3px solid #D4AF37",
+          borderRadius: "30px",
+          padding: "25px",
+          maxWidth: "500px",
+          margin: "auto",
+          background:
+            "rgba(0,0,0,0.35)",
+          boxShadow:
+            "0 0 25px rgba(212,175,55,0.35)",
         }}
       >
-        ☕ دىلخۇش ئارامگاھى
-      </h1>
 
-      <h2>
-        يىمەك-ئىچمەك تىزىملىكى
-      </h2>
+        <h1
+          style={{
+            color:"#D4AF37",
+            fontSize:"32px",
+            marginBottom:"5px",
+          }}
+        >
+          ☕ دىلخۇش ئارامگاھى
+        </h1>
 
-
-      <div>
-        {Object.keys(menus).map((name) => (
-          <button
-            key={name}
-            onClick={() => setActive(name)}
-            style={{
-              margin: "8px",
-              padding: "12px 18px",
-              borderRadius: "25px",
-              border: "1px solid #d4af37",
-              background:
-                active === name
-                  ? "#d4af37"
-                  : "#12384d",
-              color:
-                active === name
-                  ? "#07151f"
-                  : "white",
-              fontSize: "16px",
-            }}
-          >
-            {name}
-          </button>
-        ))}
-      </div>
+        <p
+          style={{
+            fontSize:"20px",
+            color:"#FFE8A3",
+          }}
+        >
+          ✦ يىمەك-ئىچمەك تىزىملىكى ✦
+        </p>
 
 
-      <div style={{ marginTop: "30px" }}>
-        {menus[active].map((item, index) => (
+        <div style={{marginTop:"25px"}}>
+          {Object.keys(menus).map((name)=>(
+            <button
+              key={name}
+              onClick={()=>setActive(name)}
+              style={{
+                margin:"6px",
+                padding:"13px 18px",
+                borderRadius:"30px",
+                border:
+                  "2px solid #D4AF37",
+                background:
+                  active===name
+                  ? "#D4AF37"
+                  : "transparent",
+                color:
+                  active===name
+                  ? "#07151F"
+                  : "#fff",
+                fontSize:"16px",
+              }}
+            >
+              {name}
+            </button>
+          ))}
+        </div>
+
+
+        <h2
+          style={{
+            marginTop:"35px",
+            color:"#D4AF37",
+          }}
+        >
+          {active}
+        </h2>
+
+
+        {menus[active].map((item,index)=>(
           <div
             key={index}
             style={{
-              background: "#8b5a2b",
-              margin: "15px auto",
-              padding: "20px",
-              maxWidth: "350px",
-              borderRadius: "20px",
-              border: "2px solid #d4af37",
+              margin:"18px auto",
+              padding:"18px",
+              maxWidth:"360px",
+              borderRadius:"22px",
+              background:
+                "linear-gradient(145deg,#8B5A2B,#5C3515)",
+              border:
+                "2px solid #D4AF37",
+              boxShadow:
+                "0 8px 20px rgba(0,0,0,0.4)",
             }}
           >
-            <h3>
+
+            <h3
+              style={{
+                fontSize:"21px",
+                margin:"5px",
+              }}
+            >
               {item[0]}
             </h3>
 
-            <p
+            <div
               style={{
-                color: "#ffe08a",
-                fontSize: "22px",
+                color:"#FFE8A3",
+                fontSize:"24px",
+                fontWeight:"bold",
               }}
             >
               {item[1]}
-            </p>
+            </div>
 
           </div>
         ))}
+
       </div>
 
     </main>
