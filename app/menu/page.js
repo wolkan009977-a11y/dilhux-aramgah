@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 export default function Menu() {
 
   const [category, setCategory] = useState(null);
-
+const [firebaseDrinks, setFirebaseDrinks] = useState([]);
 const [firebaseKawaps, setFirebaseKawaps] = useState([]);
 
 useEffect(() => {
@@ -25,6 +25,22 @@ useEffect(() => {
   };
 
   getKawaps();
+}, []);
+  useEffect(() => {
+  const getDrinks = async () => {
+    const querySnapshot = await getDocs(collection(db, "menu"));
+
+    const items = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setFirebaseDrinks(
+      items.filter((item) => item.category === "drink")
+    );
+  };
+
+  getDrinks();
 }, []);
   const kawaps = [
     {
@@ -412,7 +428,7 @@ gap:"20px",
 }}
 >
 
-{drinks.map((item,index)=>(
+{firebaseDrinks.map((item,index)=>(
 
 <div
 key={index}
