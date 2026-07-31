@@ -62,7 +62,89 @@ const drinks = [
     image: "/images/kokteyl.jpg",
   },
 ];
-  
+  const bottleDrinks = [
+  {
+    name: "لىفىت ئاپ (كىچىك)",
+    price: "25₺",
+  },
+  {
+    name: "لىفىت ئاپ (چوڭ)",
+    price: "30₺",
+  },
+  {
+    name: "تاقە بىر لىتىر",
+    price: "35₺",
+  },
+  {
+    name: "مونىستىر",
+    price: "75₺",
+  },
+  {
+    name: "جوي",
+    price: "25₺",
+  },
+  {
+    name: "رانىي",
+    price: "25₺",
+  },
+  {
+    name: "كېنزا",
+    price: "25₺",
+  },
+  {
+    name: "مۇز قەھۋە",
+    price: "35₺",
+  },
+  {
+    name: "ئورىجىنال",
+    price: "45₺",
+  },
+  {
+    name: "سىلىس",
+    price: "20₺",
+  },
+  {
+    name: "باربىكان",
+    price: "40₺",
+  },
+  {
+    name: "طازج",
+    price: "20₺",
+  },
+  {
+    name: "سۈت",
+    price: "55₺",
+  },
+  {
+    name: "بۆلجۈرگەن تەملىك سۈت",
+    price: "55₺",
+  },
+  {
+    name: "بانان تەملىك سۈت",
+    price: "55₺",
+  },
+  {
+    name: "مىرىندا",
+    price: "35₺",
+  },
+  {
+    name: "تاقە ئەسلى",
+    price: "30₺",
+  },
+  {
+    name: "راۋا ئانا ئىچىملىكى",
+    price: "20₺",
+  },
+  {
+    name: "موكو كوكو",
+    price: "30₺",
+  },
+
+  {
+    name: "سېۋىن ئاپ",
+    price: "20₺",
+  },
+];
   return (
 
     <main
@@ -124,9 +206,12 @@ const drinks = [
 </button>
 
 
-          <button style={buttonStyle}>
-            🧃 قۇتۇلۇق ئىچىملىكلەر
-          </button>
+          <button
+  style={buttonStyle}
+  onClick={()=>setCategory("bottle")}
+>
+  🧃 قۇتۇلۇق ئىچىملىكلەر
+</button>
 
 
           <button style={buttonStyle}>
@@ -296,13 +381,79 @@ fontWeight:"bold",
 
 )}
   
-    </main>
+
+
+{category==="bottle" && (
+
+<div>
+
+<button
+style={backStyle}
+onClick={()=>setCategory(null)}
+>
+← قايتىش
+</button>
+
+
+<h2
+style={{
+color:"#D4AF37",
+fontSize:"28px",
+}}
+>
+🧃 قۇتۇلۇق ئىچىملىكلەر
+</h2>
+
+
+<div
+style={{
+display:"grid",
+gap:"15px",
+}}
+>
+
+{bottleDrinks.map((item,index)=>(
+
+<div
+key={index}
+style={cardStyle}
+>
+
+<h3
+style={{
+fontSize:"22px",
+margin:"20px",
+}}
+>
+{item.name}
+</h3>
+
+
+<p
+style={{
+color:"#D4AF37",
+fontSize:"23px",
+fontWeight:"bold",
+}}
+>
+{item.price}
+</p>
+
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+)}
+  
+</main>
 
   );
 }
-
-
-
 
 const buttonStyle = {
 
