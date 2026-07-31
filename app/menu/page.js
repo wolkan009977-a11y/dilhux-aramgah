@@ -10,7 +10,7 @@ export default function Menu() {
   const kawaps = [
     {
       name: "قوي گۆشى كاۋاپ",
-      price: "65 تىل",
+      price: "65 ₺",
       image: "/images/qoy-kawap.jpg",
     },
     {
