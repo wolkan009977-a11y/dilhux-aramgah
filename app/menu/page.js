@@ -66,7 +66,13 @@ export default function Menu() {
               🥤 ئىچىملىكلەر
             </button>
 
-
+<button
+  onClick={() => setCategory("bottle")}
+  style={buttonStyle}
+>
+  🧃 قۇتۇلۇق ئىچىملىكلەر
+</button>
+    
             <button
               onClick={() => setCategory("spicy")}
               style={buttonStyle}
