@@ -3,8 +3,6 @@
 import { useState } from "react";
 
 export default function Menu() {
-  const [active, setActive] = useState("كاۋاپلار");
-
   const menus = {
     "🔥 كاۋاپلار": [
       ["قوي گۆشى كاۋاپ", "65₺"],
@@ -31,12 +29,13 @@ export default function Menu() {
     ],
   };
 
+  const [active, setActive] = useState("🔥 كاۋاپلار");
+
   return (
     <main
       style={{
-        background:
-          "linear-gradient(#0b2a3d, #07151f)",
-        color: "#fff",
+        background: "linear-gradient(#0b2a3d, #07151f)",
+        color: "white",
         minHeight: "100vh",
         padding: "30px",
         textAlign: "center",
@@ -52,11 +51,7 @@ export default function Menu() {
         ☕ دىلخۇش ئارامگاھى
       </h1>
 
-      <h2
-        style={{
-          color: "#fff",
-        }}
-      >
+      <h2>
         يىمەك-ئىچمەك تىزىملىكى
       </h2>
 
@@ -78,7 +73,7 @@ export default function Menu() {
               color:
                 active === name
                   ? "#07151f"
-                  : "#fff",
+                  : "white",
               fontSize: "16px",
             }}
           >
@@ -88,28 +83,27 @@ export default function Menu() {
       </div>
 
 
-      <div style={{marginTop:"30px"}}>
-        {menus[active].map((item,index)=>(
+      <div style={{ marginTop: "30px" }}>
+        {menus[active].map((item, index) => (
           <div
             key={index}
             style={{
-              background:"#8b5a2b",
-              margin:"15px auto",
-              padding:"20px",
-              maxWidth:"350px",
-              borderRadius:"20px",
-              border:"2px solid #d4af37",
+              background: "#8b5a2b",
+              margin: "15px auto",
+              padding: "20px",
+              maxWidth: "350px",
+              borderRadius: "20px",
+              border: "2px solid #d4af37",
             }}
           >
-
             <h3>
               {item[0]}
             </h3>
 
             <p
               style={{
-                color:"#ffe08a",
-                fontSize:"22px",
+                color: "#ffe08a",
+                fontSize: "22px",
               }}
             >
               {item[1]}
@@ -121,4 +115,4 @@ export default function Menu() {
 
     </main>
   );
-              }
+}
