@@ -497,7 +497,7 @@ gap:"15px",
 }}
 >
 
-{bottleDrinks.map((item,index)=>(
+{firebaseBottleDrinks.map((item,index)=>(
 
 <div
 key={index}
