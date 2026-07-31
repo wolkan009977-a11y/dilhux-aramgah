@@ -18,7 +18,7 @@ export default function Home() {
         style={{
           width: "100%",
           maxWidth: "430px",
-          padding: "28px 22px",
+          padding: "30px 22px",
           borderRadius: "30px",
           background:
             "rgba(0,0,0,0.45)",
@@ -26,27 +26,28 @@ export default function Home() {
             "3px solid #D4AF37",
           boxShadow:
             "0 0 35px rgba(212,175,55,0.35)",
-          position:"relative",
-          overflow:"hidden",
         }}
       >
 
-        <div
+        <img
+          src="/logo.png"
+          alt="DILHUX Logo"
           style={{
-            fontSize:"22px",
-            color:"#D4AF37",
-            letterSpacing:"5px",
+            width:"150px",
+            height:"150px",
+            objectFit:"contain",
+            marginBottom:"10px",
+            filter:
+              "drop-shadow(0 6px 12px rgba(0,0,0,0.6))",
           }}
-        >
-          ✦ ☕ ✦
-        </div>
+        />
 
 
         <h1
           style={{
             color:"#D4AF37",
             fontSize:"34px",
-            margin:"12px 0",
+            margin:"10px 0",
             textShadow:
               "0 3px 10px #000",
           }}
@@ -83,12 +84,12 @@ export default function Home() {
           style={{
             display:"inline-block",
             margin:"25px 0",
-            padding:"17px 45px",
+            padding:"18px 48px",
             borderRadius:"50px",
             background:
               "linear-gradient(145deg,#F5D76E,#D4AF37)",
             color:"#07151F",
-            fontSize:"21px",
+            fontSize:"22px",
             fontWeight:"bold",
             textDecoration:"none",
             border:
@@ -103,7 +104,7 @@ export default function Home() {
 
         <div
           style={{
-            marginTop:"10px",
+            marginTop:"15px",
             paddingTop:"20px",
             borderTop:
               "1px solid rgba(212,175,55,0.5)",
@@ -132,6 +133,7 @@ export default function Home() {
         >
           ✦ DILHUX ✦
         </div>
+
 
       </div>
 
