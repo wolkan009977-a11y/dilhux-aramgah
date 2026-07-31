@@ -1,12 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { db } from "@/lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 export default function Menu() {
 
   const [category, setCategory] = useState(null);
 
+const [firebaseKawaps, setFirebaseKawaps] = useState([]);
 
+useEffect(() => {
+  const getKawaps = async () => {
+    const querySnapshot = await getDocs(collection(db, "menu"));
+
+    const items = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    setFirebaseKawaps(
+      items.filter((item) => item.category === "kawap")
+    );
+  };
+
+  getKawaps();
+}, []);
   const kawaps = [
     {
       name: "قوي گۆشى كاۋاپ",
@@ -311,7 +330,7 @@ onClick={()=>setCategory("cold")}
             }}
           >
 
-          {kawaps.map((item,index)=>(
+          {firebaseKawaps.map((item,index)=>(
 
             <div
               key={index}
@@ -319,7 +338,7 @@ onClick={()=>setCategory("cold")}
             >
 
               <img
-                src={item.image}
+  src={item.image || "/images/qoy-kawap.jpg"}
                 alt={item.name}
                 style={{
                   width:"100%",
