@@ -503,7 +503,16 @@ gap:"15px",
 key={index}
 style={cardStyle}
 >
-
+<img
+src={item.image}
+alt={item.name}
+style={{
+width:"100%",
+height:"230px",
+objectFit:"cover",
+borderRadius:"20px 20px 0 0",
+}}
+/>
 <h3
 style={{
 fontSize:"22px",
