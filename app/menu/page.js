@@ -10,8 +10,9 @@ export default function Menu() {
 const [firebaseDrinks, setFirebaseDrinks] = useState([]);
 const [firebaseKawaps, setFirebaseKawaps] = useState([]);
 
-useEffect(() => {
-  const getKawaps = async () => {
+
+  useEffect(() => {
+  const getMenu = async () => {
     const querySnapshot = await getDocs(collection(db, "menu"));
 
     const items = querySnapshot.docs.map((doc) => ({
@@ -22,28 +23,17 @@ useEffect(() => {
     setFirebaseKawaps(
       items.filter((item) => item.category === "kawap")
     );
-  };
-
-  getKawaps();
-}, []);
-  useEffect(() => {
-  const getDrinks = async () => {
-    const querySnapshot = await getDocs(collection(db, "menu"));
-
-    const items = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    }));
 
     setFirebaseDrinks(
       items.filter((item) => item.category === "drink")
     );
   };
 
-  getDrinks();
+  getMenu();
 }, []);
   const kawaps = [
     {
+      
       name: "قوي گۆشى كاۋاپ",
       price: "65 ₺",
       image: "/images/qoy-kawap.jpg",
