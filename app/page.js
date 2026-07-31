@@ -18,8 +18,8 @@ export default function Home() {
         style={{
           width: "100%",
           maxWidth: "430px",
-          padding: "30px 22px",
-          borderRadius: "30px",
+          padding: "28px 22px",
+          borderRadius: "32px",
           background:
             "rgba(0,0,0,0.45)",
           border:
@@ -36,7 +36,8 @@ export default function Home() {
             width:"150px",
             height:"150px",
             objectFit:"contain",
-            marginBottom:"10px",
+            borderRadius:"50%",
+            marginBottom:"12px",
             filter:
               "drop-shadow(0 6px 12px rgba(0,0,0,0.6))",
           }}
@@ -71,6 +72,7 @@ export default function Home() {
           style={{
             fontSize:"20px",
             lineHeight:"1.9",
+            margin:"15px 0",
           }}
         >
           ئەزىز مېھمان،
@@ -83,13 +85,13 @@ export default function Home() {
           href="/menu"
           style={{
             display:"inline-block",
-            margin:"25px 0",
-            padding:"18px 48px",
+            margin:"20px 0",
+            padding:"17px 45px",
             borderRadius:"50px",
             background:
               "linear-gradient(145deg,#F5D76E,#D4AF37)",
             color:"#07151F",
-            fontSize:"22px",
+            fontSize:"21px",
             fontWeight:"bold",
             textDecoration:"none",
             border:
@@ -105,7 +107,7 @@ export default function Home() {
         <div
           style={{
             marginTop:"15px",
-            paddingTop:"20px",
+            paddingTop:"18px",
             borderTop:
               "1px solid rgba(212,175,55,0.5)",
             color:"#FFE8A3",
