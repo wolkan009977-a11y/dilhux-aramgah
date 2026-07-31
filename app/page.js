@@ -14,7 +14,6 @@ export default function Home() {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        overflow: "hidden",
       }}
     >
 
@@ -28,7 +27,6 @@ export default function Home() {
           border: "3px solid #D4AF37",
           boxShadow:
             "0 0 35px rgba(212,175,55,0.35)",
-          boxSizing: "border-box",
         }}
       >
 
@@ -41,8 +39,6 @@ export default function Home() {
             objectFit: "contain",
             borderRadius: "50%",
             marginBottom: "10px",
-            filter:
-              "drop-shadow(0 6px 12px rgba(0,0,0,0.6))",
           }}
         />
 
@@ -51,32 +47,20 @@ export default function Home() {
             color: "#D4AF37",
             fontSize: "32px",
             margin: "8px 0",
-            textShadow: "0 3px 10px #000",
           }}
         >
           دىلخۇش ئارامگاھى
         </h1>
 
 
-        <div
-          style={{
-            width: "80%",
-            height: "1px",
-            background: "#D4AF37",
-            margin: "12px auto",
-          }}
-        />
-
-
         <p
           style={{
-            fontSize: "19px",
-            lineHeight: "1.8",
-            margin: "10px 0",
+            fontSize:"19px",
+            lineHeight:"1.8",
           }}
         >
           ئەزىز مېھمان،
-          <br />
+          <br/>
           دىلخۇش ئارامگاھىغا خۇش كەپسىز
         </p>
 
@@ -84,19 +68,15 @@ export default function Home() {
         <a
           href="/menu"
           style={{
-            display: "inline-block",
-            margin: "18px 0",
-            padding: "16px 42px",
-            borderRadius: "50px",
-            background:
-              "linear-gradient(145deg,#F5D76E,#D4AF37)",
-            color: "#07151F",
-            fontSize: "21px",
-            fontWeight: "bold",
-            textDecoration: "none",
-            border: "3px solid #FFE8A3",
-            boxShadow:
-              "0 8px 20px rgba(0,0,0,0.45)",
+            display:"inline-block",
+            margin:"18px 0",
+            padding:"16px 42px",
+            borderRadius:"50px",
+            background:"#D4AF37",
+            color:"#07151F",
+            fontSize:"21px",
+            fontWeight:"bold",
+            textDecoration:"none",
           }}
         >
           🍽️ تىزىملىك كۆرۈش
@@ -105,31 +85,83 @@ export default function Home() {
 
         <div
           style={{
-            marginTop: "10px",
-            paddingTop: "15px",
-            borderTop:
-              "1px solid rgba(212,175,55,0.5)",
-            color: "#FFE8A3",
-            fontSize: "15px",
-            lineHeight: "1.9",
+            color:"#FFE8A3",
+            fontSize:"15px",
+            lineHeight:"1.9",
           }}
         >
           دوستلار جەم بولۇپ كۈلكە ياڭرىغان،
-          <br />
+          <br/>
           مەززىلىك تاماق بىلەن داستىخان تولغان.
-          <br />
+          <br/>
           «يەنە كېلەيلى» دەيدۇ ھەممە مېھمان،
-          <br />
+          <br/>
           دىلخۇش ئارامگاھى — نامىغا لايىق ماكان
+        </div>
+
+
+        {/* ئادرېس بۆلىكى */}
+
+        <div
+          style={{
+            marginTop:"20px",
+            paddingTop:"18px",
+            borderTop:
+              "1px solid rgba(212,175,55,0.5)",
+            color:"#FFE8A3",
+            fontSize:"15px",
+            lineHeight:"2",
+          }}
+        >
+
+          ✦ ───────── ✦
+          <br/>
+
+          <span
+            style={{
+              color:"#D4AF37",
+              fontSize:"18px",
+            }}
+          >
+            📍 بىزنىڭ ئورنىمىز
+          </span>
+
+          <br/>
+
+          كەفەر جالىس،
+          <br/>
+          ئۇيغۇر مەھەللىسى،
+          <br/>
+          خەلىق ئىشلار ئىدارىسىنىڭ ئۇدۇلىدا
+
+          <br/><br/>
+
+          <span
+            style={{
+              color:"#D4AF37",
+              fontSize:"18px",
+            }}
+          >
+            📞 ئالاقىلىشىش
+          </span>
+
+          <br/>
+
+          +963968363799
+
+          <br/>
+
+          ✦ ───────── ✦
+
         </div>
 
 
         <div
           style={{
-            marginTop: "15px",
-            color: "#D4AF37",
-            fontSize: "13px",
-            letterSpacing: "3px",
+            marginTop:"15px",
+            color:"#D4AF37",
+            fontSize:"13px",
+            letterSpacing:"3px",
           }}
         >
           ✦ DILHUX ✦
@@ -139,4 +171,4 @@ export default function Home() {
 
     </main>
   );
-}
+              }
