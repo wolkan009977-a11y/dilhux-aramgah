@@ -145,6 +145,36 @@ const drinks = [
     price: "20₺",
   },
 ];
+  const spicyFoods = [
+  {
+    name: "تۇخۇم",
+    price: "15₺",
+  },
+  {
+    name: "ئۇزۇنچاق قىزا",
+    price: "25₺",
+  },
+  {
+    name: "ياپلاق قىزا",
+    price: "25₺",
+  },
+  {
+    name: "توخۇ ۋەنزىسى",
+    price: "20₺",
+  },
+  {
+    name: "موگو",
+    price: "20₺",
+  },
+  {
+    name: "ياڭيو",
+    price: "10₺",
+  },
+  {
+    name: "نان",
+    price: "5₺",
+  },
+];
   return (
 
     <main
@@ -214,9 +244,12 @@ const drinks = [
 </button>
 
 
-          <button style={buttonStyle}>
-            🌶️ ئاچچىقلار
-          </button>
+          <button
+style={buttonStyle}
+onClick={()=>setCategory("spicy")}
+>
+  🌶️ ئاچچىقلار
+</button>
 
         </div>
 
@@ -382,7 +415,6 @@ fontWeight:"bold",
 )}
   
 
-
 {category==="bottle" && (
 
 <div>
@@ -449,7 +481,72 @@ fontWeight:"bold",
 </div>
 
 )}
-  
+ {category==="spicy" && (
+
+<div>
+
+<button
+style={backStyle}
+onClick={()=>setCategory(null)}
+>
+← قايتىش
+</button>
+
+
+<h2
+style={{
+color:"#D4AF37",
+fontSize:"28px",
+}}
+>
+🌶️ ئاچچىقلار
+</h2>
+
+
+<div
+style={{
+display:"grid",
+gap:"15px",
+}}
+>
+
+{spicyFoods.map((item,index)=>(
+
+<div
+key={index}
+style={cardStyle}
+>
+
+<h3
+style={{
+fontSize:"22px",
+margin:"20px",
+}}
+>
+{item.name}
+</h3>
+
+
+<p
+style={{
+color:"#D4AF37",
+fontSize:"23px",
+fontWeight:"bold",
+}}
+>
+{item.price}
+</p>
+
+
+</div>
+
+))}
+
+</div>
+
+</div>
+
+)} 
 </main>
 
   );
